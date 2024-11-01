@@ -1,0 +1,45 @@
+@e_commerce_api_HostAddress = http://localhost:5025
+
+GET {{e_commerce_api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+POST {{e_commerce_api_HostAddress}}/api/users/register
+Content-Type: application/json
+{
+  "username": "adlada",
+  "password": "adlada",
+  "role": "admin"
+}
+
+###
+POST {{e_commerce_api_HostAddress}}/api/users/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin"
+}
+
+###
+GET {{e_commerce_api_HostAddress}}/api/users/profile
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjgiLCJyb2xlIjoiQWRtaW4iLCJuYmYiOjE3MjQ0ODMzNzMsImV4cCI6MTcyNDQ4Njk3MywiaWF0IjoxNzI0NDgzMzczLCJpc3MiOiJ5b3VyZG9tYWluLmNvbSIsImF1ZCI6InlvdXJkb21haW4uY29tIn0.yGK71Bh-GOSEAEoUQcJYzYf2qHilNTny13ji1JJL6pQ
+
+###
+PUT {{e_commerce_api_HostAddress}}/api/users/2
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjgiLCJyb2xlIjoiQWRtaW4iLCJuYmYiOjE3MjQ0ODMzNzMsImV4cCI6MTcyNDQ4Njk3MywiaWF0IjoxNzI0NDgzMzczLCJpc3MiOiJ5b3VyZG9tYWluLmNvbSIsImF1ZCI6InlvdXJkb21haW4uY29tIn0.yGK71Bh-GOSEAEoUQcJYzYf2qHilNTny13ji1JJL6pQ
+
+{
+    "Username": "updateduser",
+    "Role": "UpdatedRole" // Optional
+}
+
+
+###
+GET {{e_commerce_api_HostAddress}}/api/products?page=1&pageSize=20&sortBy=price&ascending=false&minPrice=10&maxPrice=500
+
+
+###
+GET {{e_commerce_api_HostAddress}}/api/products/search?query=laptop
